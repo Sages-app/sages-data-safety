@@ -4,24 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Safety & Deletion | Sages</title>
+
+    <title>Data Safety & Account Deletion | Sages</title>
+
     <link
         href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
+
     <style>
         :root {
             --bg-color: #121212;
             --accent-gold: #C5A059;
             --text-primary: #E0DCD0;
-            --text-secondary: rgba(224, 220, 208, 0.7);
-            --border-color: rgba(197, 160, 89, 0.2);
+            --text-secondary: rgba(224, 220, 208, 0.72);
+            --border-color: rgba(197, 160, 89, 0.20);
+            --surface: rgba(197, 160, 89, 0.05);
+            --warning: #d7b36b;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-primary);
             font-family: 'Inter', sans-serif;
-            line-height: 1.6;
+            line-height: 1.65;
             margin: 0;
             padding: 0;
             display: flex;
@@ -29,6 +38,7 @@
         }
 
         .container {
+            width: 100%;
             max-width: 800px;
             padding: 60px 24px;
             text-align: left;
@@ -36,99 +46,140 @@
 
         header {
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 72px;
         }
 
         .logo-placeholder {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             margin: 0 auto 24px;
-            border-radius: 50%;
-            overflow: hidden;
             display: block;
-        }
-
-        img.logo-placeholder {
-            object-fit: cover;
-            border-radius: 0;
+            object-fit: contain;
         }
 
         h1 {
             font-family: 'EB Garamond', serif;
-            font-size: 36px;
+            font-size: 38px;
+            font-weight: 600;
             color: var(--text-primary);
             margin: 0;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.03em;
         }
 
         .last-updated {
             color: var(--accent-gold);
-            font-size: 14px;
+            font-size: 13px;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.12em;
             margin-top: 12px;
         }
 
         .intro {
-            font-size: 18px;
+            font-size: 19px;
             color: var(--text-primary);
             font-style: italic;
             font-family: 'EB Garamond', serif;
             border-left: 2px solid var(--accent-gold);
             padding-left: 24px;
-            margin-bottom: 60px;
+            margin-bottom: 56px;
         }
 
         section {
             margin-bottom: 48px;
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 24px;
+            padding-bottom: 30px;
         }
 
         h2 {
             font-family: 'EB Garamond', serif;
             color: var(--accent-gold);
-            font-size: 24px;
-            margin-bottom: 16px;
+            font-size: 26px;
+            font-weight: 600;
+            margin: 0 0 18px;
+        }
+
+        h3 {
+            font-family: 'EB Garamond', serif;
+            color: var(--text-primary);
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 28px;
+            margin-bottom: 12px;
         }
 
         p,
         li {
             color: var(--text-secondary);
-            font-size: 16px;
+            font-size: 15.5px;
         }
 
-        ul {
-            padding-left: 20px;
+        strong {
+            color: var(--text-primary);
+        }
+
+        ul,
+        ol {
+            padding-left: 22px;
         }
 
         li {
             margin-bottom: 12px;
         }
 
-        .contact-box {
-            background: rgba(197, 160, 89, 0.05);
+        a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-box,
+        .notice-box {
+            background: var(--surface);
             border: 1px solid var(--border-color);
-            padding: 24px;
-            border-radius: 8px;
-            margin-top: 20px;
+            padding: 22px;
+            border-radius: 10px;
+            margin-top: 18px;
+        }
+
+        .notice-box strong {
+            color: var(--warning);
         }
 
         footer {
             text-align: center;
-            margin-top: 100px;
+            margin-top: 90px;
             font-size: 12px;
             color: var(--text-secondary);
             letter-spacing: 0.05em;
         }
 
         @media (max-width: 600px) {
-            h1 {
-                font-size: 28px;
-            }
-
             .container {
                 padding: 40px 20px;
+            }
+
+            header {
+                margin-bottom: 52px;
+            }
+
+            .logo-placeholder {
+                width: 140px;
+                height: 140px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            h2 {
+                font-size: 23px;
+            }
+
+            .intro {
+                font-size: 18px;
             }
         }
     </style>
@@ -136,86 +187,317 @@
 
 <body>
     <div class="container">
+
         <header>
             <img src="sages_logo.png" alt="Sages Logo" class="logo-placeholder">
-            <h1>Data Safety & Deletion</h1>
-            <div class="last-updated">Last Updated: June 2026</div>
+
+            <h1>Data Safety & Account Deletion</h1>
+
+            <div class="last-updated">
+                Last Updated: October 2026
+            </div>
         </header>
 
+
         <div class="intro">
-            Transparency is vital to the Sages platform. This page outlines exactly how your data is handled, secured,
-            and how you can exercise your right to permanently delete your presence from our Council. This information
-            is provided in compliance with Google Play Store Data Safety requirements.
+            Sages is designed to provide personalized AI guidance while giving you
+            control over your account and personal information. This page explains
+            the types of data used by Sages, the services involved in processing it,
+            and how you can request deletion of your account.
         </div>
 
+
         <section>
-            <h2>1. Data Collection and Security</h2>
-            <p>To provide a deeply personalized experience, we collect specific data points. All data transmitted
-                between your device and our servers is <strong>encrypted in transit</strong> using secure, modern
-                cryptographic protocols (HTTPS/TLS).</p>
+            <h2>1. Information Used by Sages</h2>
+
+            <p>
+                Sages processes information that is necessary to provide account
+                functionality, personalized conversations, continuity across sessions,
+                subscriptions, notifications, and application reliability.
+            </p>
+
             <ul>
-                <li><strong>Personal Info:</strong> Name and Email Address (used strictly for account authentication via
-                    Supabase).</li>
-                <li><strong>App Activity:</strong> Your chat history and interactions with the Sages (used to maintain
-                    continuity in your mentorship).</li>
-                <li><strong>App Performance:</strong> Crash logs and diagnostics via Firebase (used to ensure the
-                    stability of the platform).</li>
+                <li>
+                    <strong>Account information:</strong>
+                    information such as your email address and profile/display information
+                    used to create and authenticate your Sages account.
+                </li>
+
+                <li>
+                    <strong>Conversations:</strong>
+                    messages exchanged with individual mentors and Council conversations.
+                </li>
+
+                <li>
+                    <strong>Personalization data:</strong>
+                    information stored in Sages features such as Memories, Threads,
+                    Goals, Decisions, and Reflections.
+                </li>
+
+                <li>
+                    <strong>Preferences and settings:</strong>
+                    settings used to personalize your Sages experience, such as
+                    applicable reflection and account preferences.
+                </li>
+
+                <li>
+                    <strong>Subscription and usage information:</strong>
+                    information needed to determine Premium entitlement, subscription
+                    status, usage limits, and access to paid features.
+                </li>
+
+                <li>
+                    <strong>Notification information:</strong>
+                    device notification tokens and related device-registration
+                    information used to deliver notifications you are eligible to receive.
+                </li>
+
+                <li>
+                    <strong>Technical and diagnostic information:</strong>
+                    crash reports and technical diagnostics used to detect errors,
+                    improve reliability, and maintain the application.
+                </li>
+
+                <li>
+                    <strong>Support communications:</strong>
+                    information you provide when contacting Sages support.
+                </li>
             </ul>
         </section>
 
+
         <section>
-            <h2>2. Data Sharing Practices</h2>
-            <p><strong>We do not sell your personal data.</strong> However, to function as an advanced mind platform,
-                certain data must be processed by trusted third-party sentries:</p>
+            <h2>2. Security</h2>
+
+            <p>
+                Data transmitted between the Sages application and supported backend
+                services is protected in transit using HTTPS/TLS.
+            </p>
+
+            <p>
+                We use reasonable technical and organizational safeguards designed to
+                protect personal information. However, no online service can guarantee
+                absolute security.
+            </p>
+        </section>
+
+
+        <section>
+            <h2>3. AI Processing</h2>
+
+            <p>
+                Sages uses artificial intelligence to generate mentor responses,
+                Council responses, reflections, and other contextual features.
+            </p>
+
+            <p>
+                When an AI feature is used, the relevant message and selected contextual
+                information may be sent to our AI service provider so that a response can
+                be generated.
+            </p>
+
+            <p>
+                We do not intentionally send passwords or full payment-card information
+                to the AI provider.
+            </p>
+        </section>
+
+
+        <section>
+            <h2>4. Service Providers</h2>
+
+            <p>
+                <strong>Sages does not sell your personal information.</strong>
+                We use trusted service providers where necessary to operate the app.
+                Depending on the feature you use, these providers may process relevant
+                information on our behalf.
+            </p>
+
             <ul>
-                <li><strong>OpenAI:</strong> Receives the text of your prompts to generate the mentor's responses. Your
-                    name, email, and personal identifiers are strictly withheld from this process.</li>
-                <li><strong>Google Firebase:</strong> Receives anonymized crash reports and usage analytics to help us
-                    improve the application architecture.</li>
+                <li>
+                    <strong>Supabase:</strong>
+                    authentication, database, and backend data infrastructure.
+                </li>
+
+                <li>
+                    <strong>OpenAI:</strong>
+                    processing relevant prompts and contextual information to provide
+                    AI-generated responses.
+                </li>
+
+                <li>
+                    <strong>RevenueCat:</strong>
+                    subscription entitlement and purchase-status management.
+                </li>
+
+                <li>
+                    <strong>Apple App Store and Google Play:</strong>
+                    processing subscription purchases, renewals, cancellations,
+                    and store billing.
+                </li>
+
+                <li>
+                    <strong>Firebase:</strong>
+                    crash diagnostics and push-notification infrastructure.
+                </li>
+
+                <li>
+                    <strong>DigitalOcean:</strong>
+                    hosting infrastructure used by the Sages backend.
+                </li>
+
+                <li>
+                    <strong>Inngest:</strong>
+                    background workflow processing for supported Sages features.
+                </li>
+
+                <li>
+                    <strong>Email infrastructure:</strong>
+                    processing support communications when you contact us.
+                </li>
             </ul>
         </section>
 
-        <section>
-            <h2>3. Account and Data Deletion</h2>
-            <p>You maintain full sovereignty over your data. If you choose to depart, you may permanently delete your
-                account and all associated data at any time. We offer two methods for deletion:</p>
 
-            <h3>Method A: In-App Deletion</h3>
-            <p>If you currently have the app installed on your device, you can delete your data immediately by following
-                these steps:</p>
+        <section>
+            <h2>5. Account and Data Deletion</h2>
+
+            <p>
+                You can request deletion of your Sages account at any time.
+                Sages provides both an in-app deletion method and an out-of-app
+                deletion request method.
+            </p>
+
+
+            <h3>Method A: Delete Your Account in the App</h3>
+
+            <p>
+                If you still have access to Sages:
+            </p>
+
             <ol>
-                <li>Open the Sages application and log in.</li>
-                <li>Navigate to <strong>Profile</strong> menu.</li>
-                <li>Select <strong>Security & Privacy</strong>.</li>
-                <li>Tap <strong>Relinquish Account</strong> and confirm your decision.</li>
+                <li>Open Sages and sign in to your account.</li>
+                <li>Open <strong>Profile</strong>.</li>
+                <li>Select <strong>Privacy &amp; Security</strong>.</li>
+                <li>Select <strong>Delete Account</strong>.</li>
+                <li>Review the deletion notice and confirm your request.</li>
             </ol>
 
-            <h3>Method B: Out-of-App Deletion Request</h3>
-            <p>If you have uninstalled the app and wish to delete your account without reinstalling it, please send an
-                email from the address associated with your account to request immediate deletion:</p>
+
+            <h3>Method B: Request Deletion Without the App</h3>
+
+            <p>
+                If you no longer have Sages installed or cannot access your account,
+                you may request account deletion by contacting us from the email
+                address associated with your Sages account.
+            </p>
+
             <div class="contact-box">
-                <strong>Email:</strong> support@sagesapp.com<br>
-                <strong>Subject:</strong> Account Deletion Request
+                <strong>Email:</strong>
+                <a href="mailto:support@sagesapp.com">support@sagesapp.com</a>
+                <br>
+
+                <strong>Subject:</strong>
+                Account Deletion Request
+            </div>
+
+            <p>
+                We may ask you to verify account ownership before processing an
+                out-of-app deletion request.
+            </p>
+        </section>
+
+
+        <section>
+            <h2>6. What Happens When You Delete Your Account?</h2>
+
+            <p>
+                Deleting your account permanently disables your Sages account and
+                removes your ability to access the application using that account.
+            </p>
+
+            <p>
+                Account-associated information will be deleted or de-identified in
+                accordance with the application's deletion process, subject to any
+                information that must temporarily be retained for legitimate security,
+                fraud-prevention, billing, legal, backup, or operational purposes.
+            </p>
+
+            <p>
+                Information retained for such purposes is not kept indefinitely and is
+                handled according to applicable retention requirements.
+            </p>
+
+            <div class="notice-box">
+                <strong>Important:</strong>
+                deleting your Sages account does not automatically cancel an active
+                Apple App Store or Google Play subscription. If you do not want a
+                subscription to renew, cancel it separately through your Apple or
+                Google account subscription settings.
             </div>
         </section>
 
+
         <section>
-            <h2>4. What Happens Upon Deletion?</h2>
-            <p>When an account deletion is triggered (either in-app or via an email request), the following actions
-                occur immediately and irreversibly within our Supabase database:</p>
-            <ul>
-                <li>Your email address and display name are permanently erased.</li>
-                <li>Your authentication credentials and access tokens are revoked.</li>
-                <li>Your entire "Council History" (all chat dialogues and stored interactions) is permanently wiped from
-                    our active servers.</li>
-            </ul>
-            <p><em>Note: Routine secure server backups may retain an encrypted snapshot of data for up to 30 days before
-                    being automatically overwritten.</em></p>
+            <h2>7. Clearing Conversation History</h2>
+
+            <p>
+                Sages also provides a separate option for deleting saved conversation
+                history without deleting your entire account.
+            </p>
+
+            <p>
+                Clearing conversation history permanently removes saved conversations
+                and their messages. Memories, Goals, Threads, Decisions, and Reflections
+                are stored separately and are not automatically deleted when
+                conversation history is cleared.
+            </p>
+
+            <p>
+                Some source links or contextual references associated with deleted
+                conversations may also be removed.
+            </p>
         </section>
+
+
+        <section>
+            <h2>8. Subscriptions and Payment Information</h2>
+
+            <p>
+                Sages does not directly process full payment-card details.
+                Subscription payments are processed by the Apple App Store or
+                Google Play.
+            </p>
+
+            <p>
+                RevenueCat is used to help Sages determine your current subscription
+                entitlement and synchronize subscription status with the application.
+            </p>
+        </section>
+
+
+        <section>
+            <h2>9. Questions or Requests</h2>
+
+            <p>
+                If you have questions regarding data safety, privacy, or account
+                deletion, contact:
+            </p>
+
+            <div class="contact-box">
+                <strong>Sages Support</strong>
+                <br>
+                <a href="mailto:support@sagesapp.com">
+                    support@sagesapp.com
+                </a>
+            </div>
+        </section>
+
 
         <footer>
             &copy; 2026 SAGES. ALL RIGHTS RESERVED.
         </footer>
+
     </div>
 </body>
 
